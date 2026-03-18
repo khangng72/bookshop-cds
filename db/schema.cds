@@ -1,9 +1,10 @@
 using {
-    sap,
+    Currency,
     managed,
-    Currency
+    sap
 } from '@sap/cds/common';
 
+namespace sap.capire.bookshop;
 
 entity Books : managed {
     key ID       : Integer;
@@ -25,6 +26,5 @@ entity Authors : managed {
 
 entity Genres : sap.common.CodeList {
     key ID     : Integer;
-        name   : String;
         parent : Association to Genres;
 }
