@@ -13,3 +13,8 @@ service CatalogService @(odata: '/browse') {
             modifiedBy
         };
 }
+
+extend service CatalogService with {
+    @requires: 'authenticated-user'
+    action submitOrder(book: Integer, quantity: Integer)
+}
